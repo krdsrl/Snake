@@ -24,7 +24,15 @@ fej.shape("triangle")
 fej.penup()
 fej.color("yellow")
 
+kijelzo = turtle.Turtle()
+kijelzo.color("white")
+kijelzo.hideturtle()
+kijelzo.penup()
+kijelzo.goto(-25, 250)
+
 while True:
     fej.forward(20)
     palya.update()
     time.sleep(0.3)
+    if fej.xcor() > 400 or fej.xcor() < -400 or fej.ycor() > 300 or fej.ycor() < -300:
+        kijelzo.write("Megdöglött a kukac", font=("Arial", 16, "bold"))
