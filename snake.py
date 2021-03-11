@@ -76,9 +76,17 @@ while True:
 
     if fej.xcor() > 400 or fej.xcor() < -400 or fej.ycor() > 300 or fej.ycor() < -300:
         kijelzo.write("Megdöglött a kukac", font=("Arial", 16, "bold"))
+        turtle.done()
+
+
+    for x in kukac:
+        if fej.distance(x.xcor(), x.ycor()) < 5:
+             kijelzo.write("Megdöglött a kukac", font=("Arial", 16, "bold"))
+             turtle.done()
 
     kukac[-1].setx(fejx)
     kukac[-1].sety(fejy)
     kukac = [kukac[-1]]+kukac[:-1]
+
     palya.update()
     time.sleep(0.3)
